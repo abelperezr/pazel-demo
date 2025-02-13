@@ -6,33 +6,33 @@ This repository contains detailed documentation for an API that manages subscrib
 
 https://github.com/users/abelperezr/packages/container/package/pazel
 
-## Prerequisites
+## Prerequisitos / Prerequisites
 - Docker 20.10+
 - MongoDB instance (local or Atlas)
 
-## How to deploy?
+## Como desplegar/  How to deploy?
 
-local deployment:
+### local deployment:
 
 docker run -d `
-  --network bng `
-  --ip 10.64.1.31 `
+  --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
+  --ip IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p 8013:8000 `
-  -e MONGODB_URL="mongodb://IP-DE-TU-MONGO:27017" `
-  -e MONGO_DB_NAME="TU_BD" `
+  -e MONGODB_URL="mongodb://IP-DE-TU-MONGO/MONGO-IP:27017" `
+  -e MONGO_DB_NAME="TU_BD/YOUR-DB" `
   pazel:0.0.1
 
 
-  integration with MongodB Atlas:
+ ### integration with MongodB Atlas:
 
   docker run -d `
-  --network bng `
-  --ip 10.64.1.30 `
+  --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
+  --ip IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p 8012:8000 `
-    -e MONGODB_URL="mongodb+srv://TU-USUARIO:TU-PASSWORD@clusterxx......mongodb.net/?..........." `
-  -e MONGO_DB_NAME="TU_BD" `
+  -e MONGODB_URL="mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority" \
+  -e MONGO_DB_NAME="TU_BD/YOUR-DB" `
   pazel:0.0.1 `
 
 ## WorkFlow
@@ -74,12 +74,12 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 
 **POST** `/auth/token`
 
-- **Cuerpo de la solicitud:** 
+- **Cuerpo de la solicitud / Body:** 
   - `grant_type`: `password`
   - `username` *(string, requerido)*
   - `password` *(string, requerido)*
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Token de acceso.
   - `404 Not Found`: No encontrado.
   - `422 Validation Error`: Error en la validación de la solicitud.
@@ -87,24 +87,24 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 ---
 
 
-### Dispositivos
+### Dispositivos / Devices
 
-#### Obtener dispositivos
+#### Obtener dispositivos / Get Devices
 
 **GET** `/devices/`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `id` *(string, query, opcional)*
 
-- **Respuesta:**
+- **Respuesta  / Response:**
   - `200 OK`: Lista de dispositivos.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Crear un dispositivo
+#### Crear un dispositivo / Create a Device
 
 **POST** `/devices/`
 
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud / Body:**
 ```json
 {
   "id": "string",
@@ -116,77 +116,77 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 }
 ```
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `201 Created`: Dispositivo creado correctamente.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
 
-#### Obtener un dispositivo específico
+#### Obtener un dispositivo específico / Get a specific device
 
 **GET** `/devices/{id}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `id` *(string, path)*
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Información del dispositivo.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Eliminar un dispositivo
+#### Eliminar un dispositivo / Delete a Device
 
 **DELETE** `/devices/{id}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `id` *(string, path)*
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `204 No Content`: Eliminación exitosa.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-### Configuración de Hostname
+### Configuración de Hostname / Hostname Configuration
 
 #### Establecer hostname
 
 **POST** `/hostname/{device_id}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*
 
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud / Body:**
 ```json
 {
   "hostname": "string"
 }
 ```
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `201 Created`: Hostname establecido correctamente.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
 
 
-### Subscriptores
+### Subscriptores / Subscribers
 
-#### Obtener subscriptores de un dispositivo
+#### Obtener subscriptores de un dispositivo / Get subscribers of a device
 
 **GET** `/subs/{device_id}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*: Identificador del dispositivo.
   - `limit` *(integer, query, opcional)*: Número máximo de subscriptores a retornar (valor por defecto: 20, mínimo: 1).
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Lista de subscriptores en formato JSON.
   - `422 Validation Error`: Error en la validación de parámetros.
 
-#### Crear un subscriptor
+#### Crear un subscriptor / Create a subscribers
 
 **POST** `/subs/{device_id}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*: Identificador del dispositivo.
   
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud / Body:**
 ```json
 {
   "id": "string",
@@ -214,39 +214,39 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
   - `201 Created`: Subscriptor creado correctamente.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Obtener un subscriptor específico
+#### Obtener un subscriptor específico / Get a specific subscribers
 
 **GET** `/subs/{device_id}/{name}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*
   - `name` *(string, path)*
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Datos del subscriptor.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Eliminar un subscriptor
+#### Eliminar un subscriptor / Delete a subscriber
 
 **DELETE** `/subs/{device_id}/{name}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*
   - `name` *(string, path)*
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `204 No Content`: Eliminación exitosa.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Actualizar un subscriptor
+#### Actualizar un subscriptor / Update a subscriber
 
 **PATCH** `/subs/{device_id}/{name}`
 
-- **Parámetros:**
+- **Parámetros / Parameters:**
   - `device_id` *(string, path)*
   - `name` *(string, path)*
 
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud / Body:**
 ```json
 {
   "state": "string",
@@ -254,7 +254,7 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 }
 ```
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Subscriptor actualizado correctamente.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
