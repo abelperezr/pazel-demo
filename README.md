@@ -8,6 +8,14 @@ This repository contains detailed documentation for an API that manages subscrib
 
 ---
 
+## ⚠️ Requisitos de Compatibilidad / Compatibility Requirements
+
+📌 **Solo funciona con dispositivos SROS de Nokia y autenticación con IPoE.**
+
+📌** Only works with Nokia SROS devices and IPoE authentication.**
+---
+
+
 ## 📖 Documentación Adicional / API Documentation
 
 📌 Para más información de la API, visita:
