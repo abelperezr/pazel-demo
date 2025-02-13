@@ -30,7 +30,7 @@ This repository contains detailed documentation for an API that manages subscrib
 
 ## 🔧 Prerequisitos / Prerequisites
 
-Asegúrate de tener instalado:
+Asegúrate de tener instalado / Make sure you have installed::
 - **Docker** `20.10+`
 - **MongoDB** (instancia local o en MongoDB Atlas)
 
