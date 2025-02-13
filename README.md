@@ -146,8 +146,7 @@ POST /devices/
   "dev_name": "string",
   "host": "string",
   "auth_username": "string",
-  "auth_password": "string",
-  "platform": "string"
+  "auth_password": "string"
 }
 ```
 **Respuestas / Responses:**
@@ -213,8 +212,9 @@ POST /subs/{device_id}
   "mac": "string",
   "subprofile": "string",
   "sla": "string",
-  "ipv4": "string",
-  "ipv6": "string"
+  "ipv4_pool": "string",
+  "ipv6_pool": "string",
+  "ipv6_pd": "string"
 }
 ```
 **Respuestas / Responses:**
@@ -236,8 +236,8 @@ PATCH /subs/{device_id}/{name}
 **Cuerpo de la solicitud / Request Body:**
 ```json
 {
-  "state": "string",
-  "sla": "string"
+  "state": "string", //optional
+  "sla": "string"  //optional
 }
 ```
 **Respuestas / Responses:**
