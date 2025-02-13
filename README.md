@@ -1,5 +1,5 @@
 # 🚀 Pazel API
-
+### We see the problems as Pazel to be solved
 Este repositorio contiene la documentación detallada de una API para la gestión de suscriptores, dispositivos y autenticación JWT.
 
 This repository contains detailed documentation for an API that manages subscribers, devices, and JWT authentication.
