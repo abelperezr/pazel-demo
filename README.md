@@ -9,7 +9,7 @@ https://github.com/users/abelperezr/packages/container/package/pazel
 - Docker 20.10+
 - MongoDB instance (local or Atlas)
 
-# how to deploy?
+## How to deploy?
 
 local deployment:
 
@@ -34,9 +34,12 @@ docker run -d `
   -e MONGO_DB_NAME="TU_BD" `
   pazel:0.0.1 `
 
-# WorkFlow
+## WorkFlow
 
-Crea un usuario y luego obten un token, luego agrega un dispositivo y a este dispositivo le asocias los suscriptores
+Crea un usuario,  **POST** `/auth/register`
+Obten un token,  **POST** `/auth/token`
+Agrega un dispositivo , **POST** `/devices/`
+Al dispositivo asocias los suscriptores
 
 ## Endpoints
 
