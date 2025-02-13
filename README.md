@@ -33,7 +33,7 @@ docker run -d `
 
   docker run -d `
   --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
-  --ip IP-DEL-CONTENEDOR/CONTAINER-IP `
+  --ip `IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p `8012:8000 `
   -e MONGODB_URL=`"mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority" `
