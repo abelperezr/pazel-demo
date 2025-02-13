@@ -21,7 +21,7 @@ For more information about the API: `"YOUR-IP:PORT/docs"` or `"YOUR-IP:PORT/redo
 
 docker run -d `
   --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
-  --ip IP-DEL-CONTENEDOR/CONTAINER-IP `
+  --ip `IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p 8013:8000 `
   -e MONGODB_URL="mongodb://IP-DE-TU-MONGO/MONGO-IP:27017" `
