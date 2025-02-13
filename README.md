@@ -6,6 +6,9 @@ This repository contains detailed documentation for an API that manages subscrib
 
 📦 [Docker Package](https://github.com/users/abelperezr/packages/container/package/pazel)
 
+Descarga / Download:
+https://github.com/abelperezr/pazel-demo/blob/main/Pazel.postman_collection
+
 ---
 
 ## ⚠️ Requisitos de Compatibilidad / Compatibility Requirements
