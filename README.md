@@ -12,7 +12,7 @@ This repository contains detailed documentation for an API that manages subscrib
 
 📌 **Solo funciona con dispositivos SROS de Nokia y autenticación con IPoE.**
 
-📌 ** Only works with Nokia SROS devices and IPoE authentication.**
+📌 **Only works with Nokia SROS devices and IPoE authentication.**
 
 ---
 
