@@ -17,7 +17,7 @@ This repository contains detailed documentation for an API that manages subscrib
 ---
 
 
-## 📖 Documentación Adicional / API Documentation
+## 📖 Documentación Adicional / Additional Documentation
 
 📌 Para más información de la API, visita:
 - `http://TU-IP:PUERTO/docs` (Swagger UI)
