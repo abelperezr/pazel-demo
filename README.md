@@ -48,6 +48,8 @@ Get a token, **POST** `/auth/token`
 Add a device, **POST** `/devices/`
 Associate subscribers with the device **POST** `/subs/{device_id}`
 
+
+---
 ## Endpoints
 
 ### Autenticación JWT / JWT Authentication
@@ -56,7 +58,7 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 
 **POST** `/auth/register`
 
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud / Body:**
 ```json
 {
   "username": "string",
@@ -65,7 +67,7 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 }
 ```
 
-- **Respuesta:**
+- **Respuesta / Response:**
   - `200 OK`: Usuario registrado correctamente.
   - `404 Not Found`: No encontrado.
   - `422 Validation Error`: Error en la validación de la solicitud.
