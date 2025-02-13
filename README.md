@@ -50,9 +50,9 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
 
 ## Endpoints
 
-### Autenticación JWT
+### Autenticación JWT / JWT Authentication
 
-#### Registrar un usuario
+#### Registrar un usuario / Register an User
 
 **POST** `/auth/register`
 
@@ -70,11 +70,11 @@ Associate subscribers with the device **POST** `/subs/{device_id}`
   - `404 Not Found`: No encontrado.
   - `422 Validation Error`: Error en la validación de la solicitud.
 
-#### Obtener token de acceso
+#### Obtener token de acceso / Get a Token
 
 **POST** `/auth/token`
 
-- **Cuerpo de la solicitud:**
+- **Cuerpo de la solicitud:** 
   - `grant_type`: `password`
   - `username` *(string, requerido)*
   - `password` *(string, requerido)*
