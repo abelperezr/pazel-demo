@@ -59,6 +59,12 @@ docker run -d \
 3️⃣ **Agregar un dispositivo:** `POST /devices/`
 4️⃣ **Asociar suscriptores al dispositivo:** `POST /subs/{device_id}`
 
+
+1️⃣ **Create a user:** `POST /auth/register`
+2️⃣ **Get a Token:** `POST /auth/token`
+3️⃣ **Add a device:** `POST /devices/`
+4️⃣ **Associate subscribers with the device:** `POST /subs/{device_id}`
+
 ---
 
 ## 📡 Endpoints
