@@ -23,6 +23,9 @@ This repository contains detailed documentation for an API that manages subscrib
 - `http://TU-IP:PUERTO/docs` (Swagger UI)
 - `http://TU-IP:PUERTO/redoc` (ReDoc UI)
 
+- `http://YOUR-IP:PORT/docs` (Swagger UI)
+- `http://YOUR-IP:PORT/redoc` (ReDoc UI)
+
 ---
 
 ## 🔧 Prerequisitos / Prerequisites
