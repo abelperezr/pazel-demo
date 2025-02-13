@@ -43,9 +43,9 @@ Agrega un dispositivo , **POST** `/devices/`
 Al dispositivo asocias los suscriptores **POST** `/subs/{device_id}`
 
 
-Create a user: **POST** /auth/register
-Get a token: **POST** /auth/token
-Add a device: **POST** /devices/
+Create a user, **POST** `/auth/register`
+Get a token, **POST** `/auth/token`
+Add a device, **POST** `/devices/`
 Associate subscribers with the device **POST** `/subs/{device_id}`
 
 ## Endpoints
