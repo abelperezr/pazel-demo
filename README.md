@@ -4,6 +4,7 @@ Este repositorio contiene la documentación detallada de una API para la gestió
 
 This repository contains detailed documentation for an API that manages subscribers, devices, and JWT authentication.
 
+Docker Pull:
 📦 [Docker Package](https://github.com/users/abelperezr/packages/container/package/pazel)
 
 Descarga / Download:
