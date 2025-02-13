@@ -36,8 +36,8 @@ docker run -d `
   --ip IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p `8012:8000 `
-  -e MONGODB_URL="mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority" \
-  -e MONGO_DB_NAME="TU_BD/YOUR-DB" `
+  -e MONGODB_URL=`"mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority" `
+  -e MONGO_DB_NAME=`"TU_BD/YOUR-DB" `
   pazel:0.0.1 `
 
 ## WorkFlow
