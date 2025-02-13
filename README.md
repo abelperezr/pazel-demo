@@ -12,7 +12,7 @@ https://github.com/users/abelperezr/packages/container/package/pazel
 
 ## Como desplegar/  How to deploy?
 
-### local deployment:
+### despliegue local / local deployment:
 
 docker run -d `
   --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
@@ -24,7 +24,7 @@ docker run -d `
   pazel:0.0.1
 
 
- ### integration with MongodB Atlas:
+ ### Integración con MongodB Atlas / integration with MongodB Atlas:
 
   docker run -d `
   --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
