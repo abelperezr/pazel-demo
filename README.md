@@ -33,6 +33,7 @@ This repository contains detailed documentation for an API that manages subscrib
 Asegúrate de tener instalado / Make sure you have installed:
 - **Docker** `20.10+`
 - **MongoDB** (instancia local o en MongoDB Atlas)
+- **Enable Netconf on SROS/Habilitar Netconf en SROS** (instancia local o en MongoDB Atlas)
 
 ---
 
