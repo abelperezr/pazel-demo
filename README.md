@@ -42,6 +42,12 @@ Obten un token,  **POST** `/auth/token`
 Agrega un dispositivo , **POST** `/devices/`
 Al dispositivo asocias los suscriptores
 
+
+Create a user: POST /auth/register
+Get a token: POST /auth/token
+Add a device: POST /devices/
+Associate subscribers with the device.
+
 ## Endpoints
 
 ### Autenticación JWT
