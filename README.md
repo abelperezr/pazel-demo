@@ -20,25 +20,25 @@ For more information about the API: `"YOUR-IP:PORT/docs"` or `"YOUR-IP:PORT/redo
 ### despliegue local / local deployment:
 
 docker run -d `
-  --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
+  --network `NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
   --ip `IP-DEL-CONTENEDOR/CONTAINER-IP `
   --name pazel `
   -p `8013:8000 `
   -e MONGODB_URL=`"mongodb://IP-DE-TU-MONGO/MONGO-IP:27017" `
   -e MONGO_DB_NAME=`"TU_BD/YOUR-DB" `
-  pazel:0.0.1
+ ` pazel:0.0.1`
 
 
  ### Integración con MongodB Atlas / integration with MongodB Atlas:
 
   docker run -d `
-  --network NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
+  --network `NOMBRE-DE-LA-RED-DOCKER/DOCKER-NETWORK `
   --ip `IP-DEL-CONTENEDOR/CONTAINER-IP `
-  --name pazel `
+  --name `pazel `
   -p `8012:8000 `
   -e MONGODB_URL=`"mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority" `
   -e MONGO_DB_NAME=`"TU_BD/YOUR-DB" `
-  pazel:0.0.1 `
+  `pazel:0.0.1 `
 
 ## WorkFlow
 
