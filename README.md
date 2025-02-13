@@ -6,6 +6,9 @@ This repository contains detailed documentation for an API that manages subscrib
 
 https://github.com/users/abelperezr/packages/container/package/pazel
 
+Para más información de la API : TU-IP:PORT/docs o  TU-IP:PORT/redoc
+For more information about the API: YOUR-IP:PORT/docs or YOUR-IP:PORT/redoc
+
 ## Prerequisitos / Prerequisites
 - Docker 20.10+
 - MongoDB instance (local or Atlas)
