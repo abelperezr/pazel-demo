@@ -40,13 +40,13 @@ docker run -d `
 Crea un usuario,  **POST** `/auth/register`
 Obten un token,  **POST** `/auth/token`
 Agrega un dispositivo , **POST** `/devices/`
-Al dispositivo asocias los suscriptores
+Al dispositivo asocias los suscriptores **POST** `/subs/{device_id}`
 
 
-Create a user: POST /auth/register
-Get a token: POST /auth/token
-Add a device: POST /devices/
-Associate subscribers with the device.
+Create a user: **POST** /auth/register
+Get a token: **POST** /auth/token
+Add a device: **POST** /devices/
+Associate subscribers with the device **POST** `/subs/{device_id}`
 
 ## Endpoints
 
