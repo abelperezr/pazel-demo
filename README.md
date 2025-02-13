@@ -142,7 +142,6 @@ POST /devices/
 **Cuerpo de la solicitud / Request Body:**
 ```json
 {
-  "id": "string",
   "dev_name": "string",
   "host": "string",
   "auth_username": "string",
@@ -206,7 +205,6 @@ POST /subs/{device_id}
 **Cuerpo de la solicitud / Request Body:**
 ```json
 {
-  "id": "string",
   "name": "string",
   "state": "string",
   "mac": "string",
