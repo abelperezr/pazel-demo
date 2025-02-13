@@ -243,5 +243,21 @@ PATCH /subs/{device_id}/{name}
 - `422 Validation Error`: Error en la validación.
 
 ---
+---
+###  Containerlab Integration
+
+    pazel:
+      kind: linux
+      mgmt-ipv4: 10.64.1.30   
+      image: pazel:0.0.2       
+      ports:
+        - 8012:8000        
+      env:
+        MONGODB_URL: "mongodb+srv://ATLAS_USER:ATLAS_PASS@cluster.mongodb.net/pazel_db?retryWrites=true&w=majority"
+        MONGO_DB_NAME: "abel_bd"
+---
+---
 
 📌 **Contribuciones:** Si deseas contribuir a este proyecto, ¡siéntete libre de abrir un PR o issue! 🚀
+
+
