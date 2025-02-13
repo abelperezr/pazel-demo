@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "54d23c18-11fd-418a-8770-3e4eda89cd92",
+		"name": "Micro-Pazel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27331288",
+		"_collection_link": "https://gold-sunset-788472.postman.co/workspace/Altiplano-Lab~fdd47e86-ba71-4732-9995-2ef45df507e9/collection/27331288-54d23c18-11fd-418a-8770-3e4eda89cd92?action=share&source=collection_link&creator=27331288"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"abel\",\r\n  \"email\": \"abeleperez@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/auth/register",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Extrae el access_token de la respuesta JSON\r",
+									"const accessToken = pm.response.json().access_token;\r",
+									"\r",
+									"// Guarda el token en la variable de entorno \"access-token-pazel\"\r",
+									"pm.environment.set(\"access-token-pazel\", accessToken);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "abel",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8013/auth/token",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8013",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "Root",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8012/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8012",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/devices/",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"devices",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devices specific",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/devices/67acd8c0adcb5d30358d5afa",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"devices",
+								"67acd8c0adcb5d30358d5afa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "device",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/devices/67ace1262fd25d87381d743c",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"devices",
+								"67ace1262fd25d87381d743c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Devices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dev_name\": \"ABEL\",\n  \"host\": \"192.168.9.2\",\n  \"auth_username\": \"admin\",\n  \"auth_password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/devices/",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"devices",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LUDB",
+			"item": [
+				{
+					"name": "GET Subscriber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/subs/67acf27e2fd25d87381d7443",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"subs",
+								"67acf27e2fd25d87381d7443"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Subscriber Specific",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/subs/67acd8c0adcb5d30358d5afa/abel",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"subs",
+								"67acd8c0adcb5d30358d5afa",
+								"abel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Subscriber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"abel\",\n  \"state\": \"enable\",\n  \"mac\": \" 00:d0:f6:01:01:09\",\n  \"subprofile\": \"DEFAULT-SUB-PROF\",\n  \"sla\": \"50M\",\n  \"ipv4_pool\": \"DHCPv4\",\n  \"ipv6_pool\": \"POOL-IANA\",\n  \"ipv6_pd\": \"POOL_PD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/subs/67acfcba2fd25d87381d7446",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"subs",
+								"67acfcba2fd25d87381d7446"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Subscriber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"state\": \"disable\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/subs/67acf27e2fd25d87381d7443/prueba",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"subs",
+								"67acf27e2fd25d87381d7443",
+								"prueba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Del Subscriber",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8012/subs/67acfcba2fd25d87381d7446/prueba",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8012",
+							"path": [
+								"subs",
+								"67acfcba2fd25d87381d7446",
+								"prueba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hostname",
+			"item": [
+				{
+					"name": "Add hostname",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token-pazel}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"hostname\": \"BNG1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{Pazel_Server}}:8011/hostname/67aa29285842ee223ec77910",
+							"protocol": "http",
+							"host": [
+								"{{Pazel_Server}}"
+							],
+							"port": "8011",
+							"path": [
+								"hostname",
+								"67aa29285842ee223ec77910"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
