@@ -30,7 +30,7 @@ docker run -d `
   --ip 10.64.1.30 `
   --name pazel `
   -p 8012:8000 `
-    -e MONGODB_URL="mongodb+srv://TU-USUARIO:TU-PASSWORD@clusterxx.l9wj9.mongodb.net/?..........." `
+    -e MONGODB_URL="mongodb+srv://TU-USUARIO:TU-PASSWORD@clusterxx......mongodb.net/?..........." `
   -e MONGO_DB_NAME="TU_BD" `
   pazel:0.0.1 `
 
