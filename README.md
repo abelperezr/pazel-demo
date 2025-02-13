@@ -71,9 +71,6 @@ Al dispositivo asocias los suscriptores
   - `grant_type`: `password`
   - `username` *(string, requerido)*
   - `password` *(string, requerido)*
-  - `scope` *(string, opcional)*
-  - `client_id` *(string, opcional)*
-  - `client_secret` *(string, opcional)*
 
 - **Respuesta:**
   - `200 OK`: Token de acceso.
