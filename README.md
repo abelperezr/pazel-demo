@@ -6,7 +6,7 @@ This repository contains detailed documentation for an API that manages subscrib
 
 https://github.com/users/abelperezr/packages/container/package/pazel
 
-# Documentación adicional / API Documentation
+## Documentación adicional / API Documentation
 Para más información de la API : `"TU-IP:PUERTO/docs"` o  `"TU-IP:PUERTO/redoc"`
 
 For more information about the API: `"YOUR-IP:PORT/docs"` or `"YOUR-IP:PORT/redoc"`
